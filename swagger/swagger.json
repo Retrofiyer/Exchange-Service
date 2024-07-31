@@ -1,0 +1,52 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Currency Exchange Service",
+    "description": "Microservice for fetching currency exchange rates from USD to EUR using ExchangeRate-API"
+  },
+  "host": "localhost:3014",
+  "basePath": "/api",
+  "schemes": ["http"],
+  "paths": {
+    "/exchange-rate": {
+      "get": {
+        "summary": "Get exchange rate",
+        "description": "Fetch the exchange rate from USD to EUR",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "baseCurrency": {
+                  "type": "string"
+                },
+                "targetCurrency": {
+                  "type": "string"
+                },
+                "rate": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
