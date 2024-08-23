@@ -9,7 +9,7 @@
   "basePath": "/api",
   "schemes": ["http"],
   "paths": {
-    "/exchange-rate": {
+    "/exchange": {
       "get": {
         "summary": "Get exchange rate",
         "description": "Fetch the exchange rate from USD to EUR",
