@@ -7,7 +7,7 @@ const swaggerDocument = require('../swagger/swagger.json');
 require('dotenv').config();
 
 const app = express();
-const port = 2103;
+const port = 8103;
 
 app.use(bodyParser.json());
 app.use(cors());
