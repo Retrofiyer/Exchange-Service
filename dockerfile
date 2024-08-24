@@ -8,8 +8,6 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
-
 # Final Stage
 FROM node:20
 
