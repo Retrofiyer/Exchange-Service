@@ -1,13 +1,14 @@
-FROM node:20
-
-WORKDIR /usr/src/app
+FROM node:20 AS build
 
 COPY package*.json ./
-
 RUN npm install
 
 COPY . .
 
-EXPOSE 3014
+FROM node:20
+
+COPY --from=build /usr/src/app /usr/src/app
+
+WORKDIR /usr/src/app
 
 CMD ["npm", "start"]
